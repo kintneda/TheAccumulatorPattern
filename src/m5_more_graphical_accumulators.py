@@ -336,11 +336,12 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
     for k in range (n):
         line = rg.Line(center1,center2)
         line.attach_to(window)
+        line.thickness = 5
         total = total + 1
         if total%2 == 1:
-            line.fill_color = R1_color
+            line.color = R1_color
         if total%2 == 0:
-            line.fill_color = R2_color
+            line.color = R2_color
         center1 = rg.Point(center1.x - rectangle1.get_width(),center1.y + rectangle1.get_height())
         center2 = rg.Point(center2.x - rectangle1.get_width(),center2.y + rectangle1.get_height())
     window.render()
